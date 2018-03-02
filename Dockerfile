@@ -74,11 +74,9 @@ RUN apk upgrade --update \
 
 ADD kcp.sh /root/kcp.sh   
 RUN chmod +x /root/kcp.sh
-    
-    
-
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 
 EXPOSE 22 
-CMD ["/usr/sbin/sshd", "-D"]
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]    
